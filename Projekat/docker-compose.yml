@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  sensordataservice:
+    image: ${DOCKER_REGISTRY-}sensordataservice
+    build:
+      context: .
+      dockerfile: SensorDataService/Dockerfile
+
+  sensordeviceservice:
+    image: ${DOCKER_REGISTRY-}sensordeviceservice
+    build:
+      context: .
+      dockerfile: SensorDeviceService/Dockerfile
+

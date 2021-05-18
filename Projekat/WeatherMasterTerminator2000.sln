@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FA04119B-4656-4364-9B9C-4B2323B0D272}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SensorDeviceService", "SensorDeviceService\SensorDeviceService.csproj", "{84876569-01A3-4BFD-9C20-FBD9C3197493}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SensorDataService", "SensorDataService\SensorDataService.csproj", "{FC4A6D1F-72EC-4963-9D47-95EE32F0597F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA04119B-4656-4364-9B9C-4B2323B0D272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA04119B-4656-4364-9B9C-4B2323B0D272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA04119B-4656-4364-9B9C-4B2323B0D272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA04119B-4656-4364-9B9C-4B2323B0D272}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84876569-01A3-4BFD-9C20-FBD9C3197493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84876569-01A3-4BFD-9C20-FBD9C3197493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84876569-01A3-4BFD-9C20-FBD9C3197493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84876569-01A3-4BFD-9C20-FBD9C3197493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC4A6D1F-72EC-4963-9D47-95EE32F0597F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4A6D1F-72EC-4963-9D47-95EE32F0597F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4A6D1F-72EC-4963-9D47-95EE32F0597F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4A6D1F-72EC-4963-9D47-95EE32F0597F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADA933AD-49B5-431F-9EEE-8E8C8FAD0858}
+	EndGlobalSection
+EndGlobal
