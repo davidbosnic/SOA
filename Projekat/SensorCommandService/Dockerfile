@@ -7,17 +7,17 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 WORKDIR /src
-COPY ["SensorDataService/SensorDataService.csproj", "SensorDataService/"]
+COPY ["SensorCommandService/SensorCommandService.csproj", "SensorCommandService/"]
 COPY ["SensorLibrary/SensorLibrary.csproj", "SensorLibrary/"]
-RUN dotnet restore "SensorDataService/SensorDataService.csproj"
+RUN dotnet restore "SensorCommandService/SensorCommandService.csproj"
 COPY . .
-WORKDIR "/src/SensorDataService"
-RUN dotnet build "SensorDataService.csproj" -c Release -o /app/build
+WORKDIR "/src/SensorCommandService"
+RUN dotnet build "SensorCommandService.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "SensorDataService.csproj" -c Release -o /app/publish
+RUN dotnet publish "SensorCommandService.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "SensorDataService.dll"]
+ENTRYPOINT ["dotnet", "SensorCommandService.dll"]

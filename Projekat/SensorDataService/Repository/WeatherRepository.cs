@@ -1,6 +1,5 @@
 ﻿using MongoDB.Driver;
 using SensorDataService.Model;
-using SensorDataService.DBContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;

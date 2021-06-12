@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using SensorDataService.Model;
-using SensorDataService.DBContext;
 using SensorDataService.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using SensorDataService.Service;
+using SensorLibrary;
+using System.Net.Http;
 
 namespace SensorDataService.Controllers
 {
@@ -15,11 +17,15 @@ namespace SensorDataService.Controllers
     [ApiController]
     public class SensorDataController : Controller
     {
-        private IWeatherRepository _repository;
+        private readonly IWeatherRepository _repository;
+        private readonly Mqtt _mqtt;
 
         public SensorDataController()
         {
-            _repository = new WeatherRepository(WeatherContext.GetInstance());
+            _mqtt = new Mqtt();
+            _repository = new WeatherRepository(MongoDBConnector.GetInstance());
+            HttpClient httpClient = new HttpClient();
+            httpClient.PostAsync("http://sensoranalyticsservice/api/SensorAnalytics/CreateAnalyticsService", null);
         }
 
         [HttpPost]
@@ -30,6 +36,7 @@ namespace SensorDataService.Controllers
                 return BadRequest();
             }
             await _repository.AddSensorDataAsync(sensorDataModel);
+            _mqtt.Publish(new Data(double.Parse(sensorDataModel.Value), sensorDataModel.Type), "sensor/data");            
             return Ok();
         }
 
@@ -98,6 +105,5 @@ namespace SensorDataService.Controllers
             await _repository.RemoveTypedSensorDataAsync(typeOfSensor);
             return Ok();
         }
-
     }
 }

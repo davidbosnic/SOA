@@ -1,15 +1,55 @@
 version: '3.4'
 
 services:
+  sensoranalyticsservice:
+    image: ${DOCKER_REGISTRY-}sensoranalyticsservice
+    build:
+      context: .
+      dockerfile: SensorAnalyticsService/Dockerfile
+
   sensordataservice:
     image: ${DOCKER_REGISTRY-}sensordataservice
+    ports:
+    - 5001:5001
     build:
       context: .
       dockerfile: SensorDataService/Dockerfile
+
 
   sensordeviceservice:
     image: ${DOCKER_REGISTRY-}sensordeviceservice
     build:
       context: .
       dockerfile: SensorDeviceService/Dockerfile
+
+
+  sensorcommandservice:
+    image: ${DOCKER_REGISTRY-}sensorcommandservice
+    build:
+      context: .
+      dockerfile: SensorCommandService/Dockerfile
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: 'rabbitmq'
+    ports:
+        - 5672:5672
+        - 15672:15672
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+   
+  influxdb:
+    image: influxdb:latest
+    container_name: 'influxdb'
+    ports:
+        - 8086:8086
+    environment:
+      - INFLUXDB_HTTP_AUTH_ENABLED=false
+
+  sensorgatewayservice:
+    image: ${DOCKER_REGISTRY-}sensorgatewayservice
+    build:
+      context: .
+      dockerfile: SensorGatewayService/Dockerfile
 
