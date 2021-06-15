@@ -1,0 +1,115 @@
+{
+  "x-generator": "NSwag v13.10.8.0 (NJsonSchema v10.3.11.0 (Newtonsoft.Json v9.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "Weather API",
+    "description": "Simple api for weather in Australia",
+    "termsOfService": "None",
+    "contact": {
+      "name": "Nikola Begovic and David Bosnic",
+      "url": "",
+      "email": "begota98@gmail.com and davidbosnic98@gmail.com"
+    },
+    "license": {
+      "name": "Under LICX",
+      "url": "https://example.com/license"
+    },
+    "version": "V1"
+  },
+  "host": "localhost:50846",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/Gateway/GetAllSensorData": {
+      "get": {
+        "tags": [
+          "Gateway"
+        ],
+        "operationId": "Gateway_GetAllSensorData",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/Gateway/GetAllTypedSensorData": {
+      "get": {
+        "tags": [
+          "Gateway"
+        ],
+        "operationId": "Gateway_GetAllTypedSensorData",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "typeOfSensor",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/Gateway/GetAllTypedTresholdSensorData": {
+      "get": {
+        "tags": [
+          "Gateway"
+        ],
+        "operationId": "Gateway_GetAllTypedTresholdSensorData",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "tresholdOfSensor",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "typeOfSensor",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/Gateway/RemoveAllData": {
+      "delete": {
+        "tags": [
+          "Gateway"
+        ],
+        "operationId": "Gateway_RemoveAllData",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -33,15 +33,6 @@ namespace SensorCommandService.Controllers
             return Ok();
         }
 
-        [HttpPost("{on}/{type}")]
-        public OkResult TurnOnOffCommand([Required] bool on, [Required] string type)
-        {
-            if (on && !onoff)
-                _commandService.Start(type);
-            else if(!on && onoff)
-                _commandService.Stop(type);
-            return Ok();
-        }
 
         [HttpPost]
         public async Task<IActionResult> Subscribe(

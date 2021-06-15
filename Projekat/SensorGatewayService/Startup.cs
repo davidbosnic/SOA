@@ -35,6 +35,30 @@ namespace SensorGatewayService
                     .Build()
                 );
             });
+
+            services.AddSwaggerDocument(config =>
+            {
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "V1";
+                    document.Info.Title = "Weather API";
+                    document.Info.Description = "Simple api for weather in Australia";
+                    document.Info.TermsOfService = "None";
+                    document.Info.Contact = new NSwag.OpenApiContact
+                    {
+                        Name = "Nikola Begovic and David Bosnic",
+                        Email = "begota98@gmail.com and davidbosnic98@gmail.com",
+                        Url = string.Empty
+                    };
+                    document.Info.License = new NSwag.OpenApiLicense
+                    {
+                        Name = "Under LICX",
+                        Url = "https://example.com/license"
+                    };
+                    document.Schemes.Add(NSwag.OpenApiSchema.Http);
+                };
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +71,13 @@ namespace SensorGatewayService
 
             app.UseHttpsRedirection();
 
+            app.UseOpenApi();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My api v1");
+                c.RoutePrefix = string.Empty;
+            });
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -55,7 +86,9 @@ namespace SensorGatewayService
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

@@ -57,10 +57,6 @@ namespace SensorGatewayService.Controllers
         public async Task<IActionResult> RemoveAllData()
             => await ProxyDelete("http://sensordataservice/api/SensorData/RemoveAllData");
 
-        //SensorCommandService
-
-        [HttpPost("{on}/{type}")]
-        public async Task<IActionResult> TurnOnOffCommand([Required] bool on, [Required] string type)
-            => await ProxyPost("http://sensorcommandservice/api/ServiceCommand/TurnOnOffCommand/" + on + "/" + type, string.Empty);
+       
     }
 }

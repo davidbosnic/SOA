@@ -1,0 +1,250 @@
+{
+  "x-generator": "NSwag v13.10.8.0 (NJsonSchema v10.3.11.0 (Newtonsoft.Json v13.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "Weather API",
+    "description": "Simple api for weather in Australia",
+    "termsOfService": "None",
+    "contact": {
+      "name": "Nikola Begovic and David Bosnic",
+      "url": "",
+      "email": "begota98@gmail.com and davidbosnic98@gmail.com"
+    },
+    "license": {
+      "name": "Under LICX",
+      "url": "https://example.com/license"
+    },
+    "version": "V1"
+  },
+  "host": "localhost:49153",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/SensorData/AddSensorData": {
+      "post": {
+        "tags": [
+          "SensorData"
+        ],
+        "operationId": "SensorData_AddSensorData",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "sensorDataModel",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SensorDataModel"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/SensorData/GetAllSensorData": {
+      "get": {
+        "tags": [
+          "SensorData"
+        ],
+        "operationId": "SensorData_GetAllSensorData",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/SensorData/GetAllTypedTresholdSensorData": {
+      "get": {
+        "tags": [
+          "SensorData"
+        ],
+        "operationId": "SensorData_GetAllTypedTresholdSensorData",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "tresholdOfSensor",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "typeOfSensor",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/SensorData/GetAllTypedSensorData": {
+      "get": {
+        "tags": [
+          "SensorData"
+        ],
+        "operationId": "SensorData_GetAllTypedSensorData",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "typeOfSensor",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/SensorData/ModifySensorData": {
+      "put": {
+        "tags": [
+          "SensorData"
+        ],
+        "operationId": "SensorData_ModifySensorData",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "sdm",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SensorDataModel"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/SensorData/RemoveAllData": {
+      "delete": {
+        "tags": [
+          "SensorData"
+        ],
+        "operationId": "SensorData_RemoveAllData",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/SensorData/RemoveSensorData": {
+      "delete": {
+        "tags": [
+          "SensorData"
+        ],
+        "operationId": "SensorData_RemoveSensorData",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "id",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/SensorData/RemoveTypedSensorData": {
+      "delete": {
+        "tags": [
+          "SensorData"
+        ],
+        "operationId": "SensorData_RemoveTypedSensorData",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "typeOfSensor",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "SensorDataModel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "recordTime": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
