@@ -1,6 +1,7 @@
 # SOA - Seminarski
 
 Tema seminarskog: Nuclio - Serverless Platform for Automated Data Science.  
+  
 Svi potrebni detalji vezani za funkcionalnost, arhitekturu, kao i primeri funkcija koji se mogu izvršavati preko ove platforme dati su na prezentaciji.
 
 # SOA - Projekat
