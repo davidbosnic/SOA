@@ -39,3 +39,7 @@ Web dashboard predstavlja grafički interfejs ove aplikacije, nudi prikaz podata
 ## Komunikacije putem brokera
 
 Za slanje poruka web klijentu od strane command mikroservisa koristi se SignalR biblioteka za web socket komunikaciju. Za komunikaciju između Data, Analytics i Command mikroservisa koristi se rabbitMQ. U aplikaciji postoje dva topic-a, jedan za komunikaciju izmedju Data i Analytics mikroservisa i drugi za komunikaciju izmedju Analytics i Command mikroservisa.
+
+## Endpoints
+
+Rute se mogu videti preko Swagger interfejsa, što je i izloženo u fajlu SOA - Izveštaj 1.docx
