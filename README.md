@@ -2,7 +2,7 @@
 
 Glavna ideja sistema je da simulira praćenje meteoroloških parametara (temperatura, stepen oblačnosti, vazdušni pritisak, količina padavina, vlažnost vazduha, brzina vetra) i izvršavanje odgovarajuće komande na osnovu analize istih. Od tehnologija koriscen je .NET CORE za implementaciju mikroservisa i čist javascript za implementaciju grafickog interfejsa.
 
-## Kratak opis mikroservisa
+## Arhitektura aplikacije i kratak opis mikroservisa
 
 ### Sensor Device Service
 
