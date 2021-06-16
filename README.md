@@ -4,6 +4,8 @@ Glavna ideja sistema je da simulira praćenje meteoroloških parametara (tempera
 
 ## Arhitektura aplikacije i kratak opis mikroservisa
 
+Aplikacija je realizovana tako da sadrži 6 mikroservisa.
+
 ### Sensor Device Service
 
 Device mikroservis čita podatke sa gore pomenutih 6 senzora i prosleđuje ih Data mikroservisu putem http post zahteva. Čitanje podataka sa senzora simulira se periodičnim čitanjem podaka iz fajla. Moguće je podešavanje parametara očitavanja u vidu promene graničnih vrednosti očitavanja.
