@@ -1,4 +1,9 @@
-# SOA
+# SOA - Seminarski
+
+Tema seminarskog: Nuclio - Serverless Platform for Automated Data Science.  
+Svi potrebni detalji vezani za funkcionalnost, arhitekturu, kao i primeri funkcija koji se mogu izvršavati preko ove platforme dati su na prezentaciji.
+
+# SOA - Projekat
 
 Glavna ideja sistema je da simulira praćenje meteoroloških parametara (temperatura, stepen oblačnosti, vazdušni pritisak, količina padavina, vlažnost vazduha, brzina vetra) i izvršavanje odgovarajuće komande na osnovu analize istih. Od tehnologija koriscen je .NET CORE za implementaciju mikroservisa i čist javascript za implementaciju grafickog interfejsa.
 
