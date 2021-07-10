@@ -1,7 +1,7 @@
 //Object.defineProperty(WebSocket, 'OPEN', { value: 1, });
 
 var connection = new signalR.HubConnectionBuilder()
-  .withUrl("https://localhost:32610/event", 
+  .withUrl("https://localhost:1029/event", 
   {    
     skipNegotiation : true,
     transport: signalR.HttpTransportType.WebSockets

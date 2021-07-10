@@ -5,3 +5,4 @@ var dashboard = new Dashboard();
 dashboard.draw(document.body);
 
 var notifications = new Notifications(document.body);
+notifications.draw(document.body);

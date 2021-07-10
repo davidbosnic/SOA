@@ -34,7 +34,7 @@ namespace SensorLibrary
             {
                 connectionString = sr.ReadToEnd();
             }
-            var client = new MongoClient(connectionString);
+            var client = new MongoClient("mongodb://root:example@mongo:27017");
             var db = client.GetDatabase("SOA_PROJEKAT");
             return db;
         }

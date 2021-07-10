@@ -50,7 +50,7 @@ export class Dashboard
         input1.className = "deleteAllInput";
         div1.appendChild(input1);
         input1.onclick = function(){
-            fetch('https://localhost:32606/api/Gateway/RemoveAllData', {
+            fetch('https://localhost:1025/api/Gateway/RemoveAllData', {
                 method: 'DELETE',
                 })
                 .then(res => res.text())
@@ -67,7 +67,7 @@ export class Dashboard
         input2.onclick = function(){
 
             dash.deleteAll();
-            fetch("https://localhost:32606/api/Gateway/GetAllSensorData", {
+            fetch("https://localhost:1025/api/Gateway/GetAllSensorData", {
                 method: "GET",
                 
                 headers: {
@@ -104,7 +104,7 @@ export class Dashboard
         input3.onclick = function(){
             dash.deleteAll();
             console.log(sel.options[sel.selectedIndex].value);
-            fetch("https://localhost:32606/api/Gateway/GetAllTypedSensorData?typeOfSensor="+sel.options[sel.selectedIndex].value, {
+            fetch("https://localhost:1025/api/Gateway/GetAllTypedSensorData?typeOfSensor="+sel.options[sel.selectedIndex].value, {
                 method: "GET",
                                 
                 headers: {

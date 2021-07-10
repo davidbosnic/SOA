@@ -34,11 +34,11 @@ namespace SensorAnalyticsService.Services
         {
             try
             {
-                if (_mqtt.IsConnected())
-                {
+                //if (_mqtt.IsConnected())
+                //{
                     _mqtt.Subscribe("sensor/data", OnDataReceived);
                     Console.WriteLine("subscribed");
-                }
+                //}
             }
             catch (Exception e)
             {
